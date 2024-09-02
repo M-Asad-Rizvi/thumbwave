@@ -15,7 +15,7 @@ const Upload = ({ onUpload }) => {
          });
 
          try {
-            const response = await fetch("/api/v1/upload", {
+            const response = await fetch("https://thumbwave.onrender.com/api/v1/upload", {
                method: "POST",
                body: formData,
             });

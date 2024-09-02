@@ -59,7 +59,7 @@ const App = () => {
 
    const handleGoogleSignUp = async (decodedUser) => {
       try {
-         const response = await fetch("/api/v1/user/google", {
+         const response = await fetch("https://thumbwave.onrender.com/api/v1/user/google", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",

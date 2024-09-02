@@ -9,7 +9,7 @@ const Dashboard = () => {
 
    const handleProjects = async () => {
       try {
-         const response = await fetch("/api/v1/project/find-all", {
+         const response = await fetch("https://thumbwave.onrender.com/api/v1/project/find-all", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",

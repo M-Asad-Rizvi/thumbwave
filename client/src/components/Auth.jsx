@@ -19,7 +19,7 @@ const Auth = ({ type }) => {
       console.log(data);
       if (type === "signup") {
          try {
-            let url = "http://localhost:3000";
+            let url = "https://thumbwave.onrender.com";
             if (data.userType === "user") {
                url += "/api/v1/user/create";
             } else if (data.userType === "creator") {
