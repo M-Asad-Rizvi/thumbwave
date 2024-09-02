@@ -17,12 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(
-   cors({
-      origin: "https://the-thumbwave.vercel.app",
-      credentials: true,
-   })
-);
+app.use(cors());
 
 app.use("/api/v1/", uploadRouter);
 app.use("/api/v1/user", userRouter);
