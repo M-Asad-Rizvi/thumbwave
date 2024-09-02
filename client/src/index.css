@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Space Grotesk", sans-serif;
+}
+
+::-webkit-scrollbar {
+   width: 0px;
+}
+
+html,
+body,
+:root {
+   scroll-behavior: smooth;
+   width: 100%;
+   height: 100%;
+}
+h4,
+h5,
+h6 {
+   font-weight: 300 !important;
+}
+
+h1,
+h2,
+h3 {
+   font-weight: 400 !important;
+}
+.__logo {
+   font-weight: 700 !important;
+}
+
+.__tube {
+   box-shadow: 0 7px 16px -11px #2e71e5;
+}
+
+.__hero_heading {
+   line-height: 1.25 !important;
+}
+
+/* Keyframes for the shaking animation */
+
+.shake-button {
+   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+   transform: translate3d(0, 0, 0);
+   backface-visibility: hidden;
+   perspective: 1000px;
+}
+
+@keyframes shake {
+   10%,
+   90% {
+      transform: translate3d(-1px, 0, 0);
+   }
+
+   20%,
+   80% {
+      transform: translate3d(2px, 0, 0);
+   }
+
+   30%,
+   50%,
+   70% {
+      transform: translate3d(-4px, 0, 0);
+   }
+
+   40%,
+   60% {
+      transform: translate3d(4px, 0, 0);
+   }
+}
