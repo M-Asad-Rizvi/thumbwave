@@ -7,7 +7,7 @@ export default defineConfig({
    server: {
       proxy: {
          "/api": {
-            target: process.env.REACT_APP_API_URL,
+            target: "https://thumbwave.onrender.com",
             changeOrigin: true,
             secure: true,
             ws: true,
