@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useGoogleOneTapLogin } from "@react-oauth/google";
 import { ToastContainer, toast } from "react-toastify";
 import { jwtDecode } from "jwt-decode";
-import { useLocation } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
@@ -18,7 +16,7 @@ import Project from "./components/Project";
 import Discover from "./pages/Discover";
 import { useUser } from "./context/UserContext";
 
-const AppContent = ({ basename }) => {
+const AppContent = () => {
    const location = useLocation();
    const [divClasses, setDivClasses] = useState(
       "min-w-screen max-w-screen-2xl min-h-screen text-light-text w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl"
@@ -96,58 +94,10 @@ const App = () => {
    }
 
    return (
-      <RouterProvider
-         router={createBrowserRouter(
-            [
-               {
-                  path: "/",
-                  element: <AppContent basename="/" />,
-                  children: [
-                     {
-                        path: "login",
-                        element: <Login />,
-                     },
-                     {
-                        path: "signup",
-                        element: <SignUp />,
-                     },
-                     {
-                        path: "upload",
-                        element: <Upload />,
-                     },
-                     {
-                        path: "app",
-                        element: <AppHome />,
-                        children: [
-                           {
-                              path: "dashboard",
-                              element: <Dashboard />,
-                           },
-                           {
-                              path: "project/:projectSlug",
-                              element: <Project />,
-                           },
-                           {
-                              path: "project/new",
-                              element: <AddProject />,
-                           },
-                           {
-                              path: "discover",
-                              element: <Discover />,
-                           },
-                        ],
-                     },
-                     // Other routes...
-                  ],
-               },
-            ],
-            {
-               basename: "/", // Set your base URL here
-            }
-         )}
-      >
+      <Router>
          <ToastContainer />
-      </RouterProvider>
+         <AppContent />
+      </Router>
    );
 };
 
