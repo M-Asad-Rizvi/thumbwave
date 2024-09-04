@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useGoogleOneTapLogin } from "@react-oauth/google";
 import { ToastContainer, toast } from "react-toastify";
 import { jwtDecode } from "jwt-decode";
+import { useLocation } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
