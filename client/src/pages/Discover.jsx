@@ -14,7 +14,7 @@ const Discover = () => {
 
    useEffect(() => {
       if (search == "") {
-         const res = fetch("https://thumbwave.onrender.com/api/v1/project/all", {
+         const res = fetch("http://localhost:3000/api/v1/project/all", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const Discover = () => {
 
       if (search.length > 2) {
          setLoading(true);
-         fetch("https://thumbwave.onrender.com/api/v1/project/discover-find", {
+         fetch("http://localhost:3000/api/v1/project/discover-find", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const Discover = () => {
 
    const handleVote = async (projectId, thumbnailId) => {
       try {
-         const res = await fetch("https://thumbwave.onrender.com/api/v1/vote/vote", {
+         const res = await fetch("http://localhost:3000/api/v1/vote/vote", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",

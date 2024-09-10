@@ -42,7 +42,7 @@ const SignUp = () => {
 
    const handleGoogleSignUp = async (decodedUser) => {
       try {
-         const response = await fetch("https://thumbwave.onrender.com/api/v1/user/google", {
+         const response = await fetch("http://localhost:3000/api/v1/user/google", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",
@@ -107,7 +107,7 @@ const SignUp = () => {
          try {
             console.log(data, "A log in request was sent to the server");
 
-            const response = await fetch("https://thumbwave.onrender.com/api/v1/user/create", {
+            const response = await fetch("http://localhost:3000/api/v1/user/create", {
                method: "POST",
                headers: {
                   "Content-Type": "application/json",

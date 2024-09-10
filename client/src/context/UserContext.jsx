@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
 
    const handlePageView = async () => {
       try {
-         const response = await fetch("https://thumbwave.onrender.com/api/v1/user", {
+         const response = await fetch("http://localhost:3000/api/v1/user", {
             method: "GET",
             headers: {
                "Content-Type": "application/json",

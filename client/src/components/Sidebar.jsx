@@ -9,7 +9,7 @@ const Sidebar = () => {
    const navigate = useNavigate();
    const handleLogout = async () => {
       try {
-         const res = await fetch("https://thumbwave.onrender.com/api/v1/user/logout", {
+         const res = await fetch("http://localhost:3000/api/v1/user/logout", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",

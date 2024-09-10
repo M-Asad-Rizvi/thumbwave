@@ -29,7 +29,7 @@ const AddProject = () => {
          setData({ ...data, thumbnails: thumbnails });
          console.log(data);
 
-         const response = await fetch("https://thumbwave.onrender.com/api/v1/project/create", {
+         const response = await fetch("http://localhost:3000/api/v1/project/create", {
             method: "POST",
             headers: {
                "Content-Type": "application/json",
