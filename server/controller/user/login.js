@@ -20,7 +20,7 @@ const login = async (req, res) => {
       if (!refreshToken || !accessToken)
          return res.status(500).json({ message: "Something went wrong!", code: 500 });
 
-      user.refreshToken = refreshToken;
+      user.refreshToken = refreshToken;   
 
       await user.save();
 
